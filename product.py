@@ -24,31 +24,31 @@ class PackagingType(ModelSQL, ModelView):
 class ProductPack(ModelSQL, ModelView):
     'Product Pack'
     __name__ = 'product.pack'
+    _rec_name = 'packaging_type'
     product = fields.Many2One('product.template', 'Product',
         ondelete='CASCADE')
     sequence = fields.Integer('Sequence',
         help='Gives the sequence order when displaying a list of packaging.')
-    codes = fields.One2Many('product.code', 'product_pack', 'Codes')
-    qty = fields.Float('Quantity by Package',
-        help='The total number of products you can put by box or pallet.')
     packaging_type = fields.Many2One('product.packaging.type',
         'Type of Packaging', required=True)
-    packaging_type_weight = fields.Float('Empty Packaging Weight',
-        help='The weight of the empty type of packaging.')
-    packages_layer = fields.Integer('Packagings by layer',
-        help='The number of packages by layer.')
-    layers = fields.Integer('Number of Layers', required=True,
-        help='The number of layers on a box or pallet.')
-    weight = fields.Float('Total Packaging Weight',
-        help='The weight of a full package, pallet or box.')
-    height = fields.Float('Height', help='The height of the packaging.')
-    width = fields.Float('Width', help='The width of the packaging.')
-    length = fields.Float('Length', help='The length of the packaging.')
+    qty = fields.Float('Quantity by Package',
+        help='The total number of products you can put by packaging.')
+    weight = fields.Float('Empty Packaging Weight')
+    height = fields.Float('Height')
+    width = fields.Float('Width')
+    length = fields.Float('Length')
+    packages_layer = fields.Integer('Packagings by layer')
+    layers = fields.Integer('Number of Layers',
+        help='The number of layers in a pallet.')
+    pallet_weight = fields.Float('Pallet Weight')
+    total_packaging_weight = fields.Float('Total Packaging Weight',
+        help='The weight of packagings for a full pallet (included pallet '
+        'weight.')
+    codes = fields.One2Many('product.code', 'product_pack', 'Codes')
     note = fields.Text('Description')
 
-    @staticmethod
-    def default_layers():
-        return 3
+    def get_rec_name(self, name):
+        return self.packaging_type.name
 
     @staticmethod
     def default_sequence():
@@ -61,8 +61,14 @@ class ProductPack(ModelSQL, ModelView):
         packaging_types = PackagingType.search([], limit=1)
         return packaging_types[0].id if packaging_types else None
 
-    def get_rec_name(self, name):
-        return self.packaging_type.name
+    @fields.depends('weight', 'layers', 'packagings_layer',
+        'pallet_weight')
+    def on_change_with_total_packaging_weight(self, name=None):
+        if (not self.weight or not self.layers or not self.packages_layer
+                or not self.pallet_weight):
+            return
+        return (self.weight * self.layers * self.packages_layer
+            + self.pallet_weight)
 
 
 class ProductCode:

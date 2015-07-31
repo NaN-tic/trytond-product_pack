@@ -2,33 +2,38 @@
 <!-- This file is part of product_pack module for Tryton.
 The COPYRIGHT file at the top level of this repository contains the full
 copyright notices and license terms. -->
-<form string="Label" col="6">
-    <label name="sequence"/>
-    <field name="sequence"/>
-    <label name="product"/>
-    <field name="product"/>
-    <separator string="Packaging" colspan="6" id="packaging"/>
+<form string="Product Pack">
     <label name="packaging_type"/>
     <field name="packaging_type"/>
-    <label name="packaging_type_weight"/>
-    <field name="packaging_type_weight"/>
+    <label name="sequence"/>
+    <field name="sequence"/>
     <label name="qty"/>
     <field name="qty"/>
-    <field name="codes" mode="tree,form" colspan="6"/>
-    <separator string="Palletization" colspan="6" id="palletization"/>
-    <label name="layers"/>
-    <field name="layers"/>
-    <label name="packages_layer"/>
-    <field name="packages_layer"/>
-    <label name="weight"/>
-    <field name="weight"/>
-    <separator string="Pallet Dimension" colspan="6" id="pallet_dimension"/>
-    <label name="height"/>
-    <field name="height"/>
-    <label name="width"/>
-    <field name="width"/>
-    <label name="length"/>
-    <field name="length"/>
-    <separator name="note" colspan="6"/>
-    <field name="note" colspan="6"/>
+    <label name="product"/>
+    <field name="product"/>
+    <separator id="measures" colspan="2" string="Measures"/>
+    <separator id="palletization" colspan="2" string="Palletization"/>
+    <group id="measures" colspan="2" col="2">
+        <label name="height"/>
+        <field name="height"/>
+        <label name="width"/>
+        <field name="width"/>
+        <label name="length"/>
+        <field name="length"/>
+        <label name="weight"/>
+        <field name="weight"/>
+    </group>
+    <group id="palletization" colspan="2" col="2">
+        <label name="layers"/>
+        <field name="layers"/>
+        <label name="packages_layer"/>
+        <field name="packages_layer"/>
+        <label name="pallet_weight"/>
+        <field name="pallet_weight"/>
+        <label name="total_packaging_weight"/>
+        <field name="total_packaging_weight"/>
+    </group>
+    <field name="codes" mode="tree,form" colspan="4"/>
+    <separator name="note" colspan="4"/>
+    <field name="note" colspan="4"/>
 </form>

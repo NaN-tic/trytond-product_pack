@@ -46,9 +46,9 @@ msgctxt "field:product.pack,packaging_type:"
 msgid "Type of Packaging"
 msgstr "Tipus d'embalatge"
 
-msgctxt "field:product.pack,packaging_type_weight:"
-msgid "Empty Packaging Weight"
-msgstr "Pes buit de l'embalatge"
+msgctxt "field:product.pack,pallet_weight:"
+msgid "Pallet Weight"
+msgstr "Pes del palet"
 
 msgctxt "field:product.pack,product:"
 msgid "Product"
@@ -66,9 +66,13 @@ msgctxt "field:product.pack,sequence:"
 msgid "Sequence"
 msgstr "Seqüència"
 
-msgctxt "field:product.pack,weight:"
+msgctxt "field:product.pack,total_packaging_weight:"
 msgid "Total Packaging Weight"
-msgstr "Pes total de l'embalatge"
+msgstr "Pes total embalatges"
+
+msgctxt "field:product.pack,weight:"
+msgid "Empty Packaging Weight"
+msgstr "Pes embalatge buit"
 
 msgctxt "field:product.pack,width:"
 msgid "Width"
@@ -118,41 +122,22 @@ msgctxt "field:product.template,packagings:"
 msgid "Packagings"
 msgstr "Embalatges"
 
-msgctxt "help:product.pack,height:"
-msgid "The height of the packaging."
-msgstr "L'alçada de l'embalatge."
-
 msgctxt "help:product.pack,layers:"
-msgid "The number of layers on a box or pallet."
-msgstr "El número de capes a una caixa o palet."
-
-msgctxt "help:product.pack,length:"
-msgid "The length of the packaging."
-msgstr "La llargada de l'embalatge."
-
-msgctxt "help:product.pack,packages_layer:"
-msgid "The number of packages by layer."
-msgstr "El número d'embalatges per capa."
-
-msgctxt "help:product.pack,packaging_type_weight:"
-msgid "The weight of the empty type of packaging."
-msgstr "El pes buit del tipus d'embalatge."
+msgid "The number of layers in a pallet."
+msgstr "El número de capes en un palet."
 
 msgctxt "help:product.pack,qty:"
-msgid "The total number of products you can put by box or pallet."
-msgstr "El número total de productes que podeu posar per caixa o palet."
+msgid "The total number of products you can put by packaging."
+msgstr "El número total de productes que podeu posar per embalatge."
 
 msgctxt "help:product.pack,sequence:"
 msgid "Gives the sequence order when displaying a list of packaging."
-msgstr "Obté l'ordre de seqüència quan mostra una llista d'embalatges."
+msgstr "Determina l'ordre quan mostra una llista d'embalatges."
 
-msgctxt "help:product.pack,weight:"
-msgid "The weight of a full package, pallet or box."
-msgstr "El pes de l'embalatge complert, caixa o palet."
-
-msgctxt "help:product.pack,width:"
-msgid "The width of the packaging."
-msgstr "L'amplada de l'embalatge."
+msgctxt "help:product.pack,total_packaging_weight:"
+msgid "The weight of packagings for a full pallet (included pallet weight."
+msgstr ""
+"El pes dels emabalatges per un palet complet (inclòs el pes del palet)."
 
 msgctxt "model:ir.action,name:act_product_pack"
 msgid "Product Package"
@@ -164,7 +149,7 @@ msgstr "Embalatge de producte"
 
 msgctxt "model:product.pack,name:"
 msgid "Product Pack"
-msgstr "Paquet de producte"
+msgstr "Embalatge de producte"
 
 msgctxt "model:product.packaging.type,name:"
 msgid "Packaging Type"
@@ -176,7 +161,7 @@ msgstr "Caixa"
 
 msgctxt "selection:product.packaging.type,type:"
 msgid "Pack"
-msgstr "Paquet"
+msgstr "Embalatge"
 
 msgctxt "selection:product.packaging.type,type:"
 msgid "Pallet"
@@ -187,16 +172,8 @@ msgid "Unit"
 msgstr "Unitat"
 
 msgctxt "view:product.pack:"
-msgid "Label"
-msgstr "Etiqueta"
-
-msgctxt "view:product.pack:"
-msgid "Packaging"
-msgstr "Embalatge"
-
-msgctxt "view:product.pack:"
-msgid "Pallet Dimension"
-msgstr "Dimensió del palet"
+msgid "Measures"
+msgstr "Mesures"
 
 msgctxt "view:product.pack:"
 msgid "Palletization"
@@ -204,7 +181,7 @@ msgstr "Patetització"
 
 msgctxt "view:product.pack:"
 msgid "Product Pack"
-msgstr "Paquet de producte"
+msgstr "Embalatge de producte"
 
 msgctxt "view:product.template:"
 msgid "Packaging"

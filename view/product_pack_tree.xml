@@ -3,14 +3,15 @@
 The COPYRIGHT file at the top level of this repository contains the full
 copyright notices and license terms. -->
 <tree string="Product Pack" sequence="sequence">
+    <field name="product"/>
     <field name="packaging_type"/>
     <field name="qty"/>
-    <field name="packaging_type_weight"/>
-    <field name="packages_layer"/>
-    <field name="layers"/>
     <field name="weight"/>
     <field name="height"/>
     <field name="width"/>
     <field name="length"/>
-    <field name="product"/>
+    <field name="layers"/>
+    <field name="packages_layer"/>
+    <field name="pallet_weight"/>
+    <field name="total_packaging_weight"/>
 </tree>
