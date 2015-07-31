@@ -20,7 +20,7 @@ msgstr "Usuari creació"
 
 msgctxt "field:product.pack,height:"
 msgid "Height"
-msgstr "Pes"
+msgstr "Alçada"
 
 msgctxt "field:product.pack,id:"
 msgid "ID"
