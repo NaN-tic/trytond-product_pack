@@ -61,7 +61,7 @@ class ProductPack(ModelSQL, ModelView):
         packaging_types = PackagingType.search([], limit=1)
         return packaging_types[0].id if packaging_types else None
 
-    @fields.depends('weight', 'layers', 'packagings_layer',
+    @fields.depends('weight', 'layers', 'packages_layer',
         'pallet_weight')
     def on_change_with_total_packaging_weight(self, name=None):
         if (not self.weight or not self.layers or not self.packages_layer
