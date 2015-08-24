@@ -50,6 +50,16 @@ class ProductPack(ModelSQL, ModelView):
     def get_rec_name(self, name):
         return self.packaging_type.name
 
+    @classmethod
+    def __setup__(cls):
+        super(ProductPack, cls).__setup__()
+        cls._order = [('product', 'ASC'), ('sequence', 'ASC')]
+
+    @staticmethod
+    def order_sequence(tables):
+        table, _ = tables[None]
+        return [table.sequence == None, table.sequence]
+
     @staticmethod
     def default_sequence():
         return 1
