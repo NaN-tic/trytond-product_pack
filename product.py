@@ -5,17 +5,18 @@ from trytond.model import ModelView, ModelSQL, fields
 from trytond.pool import Pool, PoolMeta
 
 
-__all__ = ['ProductPack', 'ProductCode', 'Template']
+__all__ = ['ProductPack', 'Template']
 __metaclass__ = PoolMeta
 
 
 class ProductPack(ModelSQL, ModelView):
     'Product Pack'
     __name__ = 'product.pack'
-    _rec_name = 'packaging_type'
+
+
     name = fields.Char('Name', select=True, required=True, translate=True)
     product = fields.Many2One('product.template', 'Product',
-        ondelete='CASCADE')
+        ondelete='CASCADE', required=True)
     sequence = fields.Integer('Sequence',
         help='Gives the sequence order when displaying a list of packaging.')
     qty = fields.Float('Quantity by Package',
@@ -31,8 +32,9 @@ class ProductPack(ModelSQL, ModelView):
     total_packaging_weight = fields.Float('Total Packaging Weight',
         help='The weight of packagings for a full pallet (included pallet '
         'weight.')
-    codes = fields.One2Many('product.code', 'product_pack', 'Codes')
     note = fields.Text('Description')
+    uom = fields.Function(fields.Many2One('product.uom', 'Unit'),
+        'get_product_uom')
 
     @classmethod
     def __setup__(cls):
@@ -48,12 +50,10 @@ class ProductPack(ModelSQL, ModelView):
     def default_sequence():
         return 1
 
-    @staticmethod
-    def default_packaging_type():
-        pool = Pool()
-        PackagingType = pool.get('product.packaging.type')
-        packaging_types = PackagingType.search([], limit=1)
-        return packaging_types[0].id if packaging_types else None
+    def get_product_uom(self, name=None):
+        if not self.product:
+            return
+        return self.product.default_uom.id
 
     @fields.depends('weight', 'layers', 'packages_layer',
         'pallet_weight')
@@ -63,27 +63,6 @@ class ProductPack(ModelSQL, ModelView):
             return
         return (self.weight * self.layers * self.packages_layer
             + self.pallet_weight)
-
-
-class ProductCode:
-    __name__ = 'product.code'
-    product_pack = fields.Many2One('product.pack', 'Packaging')
-
-    @classmethod
-    def __setup__(cls):
-        super(ProductCode, cls).__setup__()
-        if 'product_pack' not in cls.number.on_change:
-            cls.number.on_change.add('product_pack')
-            cls.number.on_change.add('_parent_product_pack.product')
-        if not cls.product.states.get('invisible', False):
-            cls.product.states['invisible'] = True
-
-    def on_change_number(self):
-        super_on_change = getattr(super(ProductCode), 'on_change_number', {})
-        res = super_on_change and super_on_change(self)
-        res['product'] = (self.product_pack and self.product_pack.product.id
-            or None)
-        return res
 
 
 class Template:

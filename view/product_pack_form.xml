@@ -5,35 +5,39 @@ copyright notices and license terms. -->
 <form string="Product Pack">
     <label name="name"/>
     <field name="name"/>
-    <label name="sequence"/>
-    <field name="sequence"/>
-    <label name="qty"/>
-    <field name="qty"/>
     <label name="product"/>
     <field name="product"/>
+
+    <label name="qty"/>
+    <field name="qty"/>
+    <label name="uom"/>
+    <field name="uom"/>
+
+    <label name="sequence"/>
+    <field name="sequence"/>
+    <newline/>
     <separator id="measures" colspan="2" string="Measures"/>
     <separator id="palletization" colspan="2" string="Palletization"/>
-    <group id="measures" colspan="2" col="2">
+    <group id="measures" colspan="2" col="2" yfill="1">
         <label name="height"/>
         <field name="height"/>
         <label name="width"/>
         <field name="width"/>
         <label name="length"/>
         <field name="length"/>
-        <label name="weight"/>
-        <field name="weight"/>
-    </group>
+            </group>
     <group id="palletization" colspan="2" col="2">
         <label name="layers"/>
         <field name="layers"/>
         <label name="packages_layer"/>
         <field name="packages_layer"/>
+        <label name="weight"/>
+        <field name="weight"/>
         <label name="pallet_weight"/>
         <field name="pallet_weight"/>
         <label name="total_packaging_weight"/>
         <field name="total_packaging_weight"/>
     </group>
-    <field name="codes" mode="tree,form" colspan="4"/>
     <separator name="note" colspan="4"/>
     <field name="note" colspan="4"/>
 </form>

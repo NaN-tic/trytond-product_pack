@@ -6,6 +6,7 @@ copyright notices and license terms. -->
     <field name="name"/>
     <field name="product"/>
     <field name="qty"/>
+    <field name="uom"/>
     <field name="weight"/>
     <field name="height"/>
     <field name="width"/>
