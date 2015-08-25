@@ -3,8 +3,8 @@
 The COPYRIGHT file at the top level of this repository contains the full
 copyright notices and license terms. -->
 <form string="Product Pack">
-    <label name="packaging_type"/>
-    <field name="packaging_type"/>
+    <label name="name"/>
+    <field name="name"/>
     <label name="sequence"/>
     <field name="sequence"/>
     <label name="qty"/>

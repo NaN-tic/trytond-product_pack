@@ -7,7 +7,6 @@ from .product import *
 
 def register():
     Pool.register(
-        PackagingType,
         ProductPack,
         ProductCode,
         Template,

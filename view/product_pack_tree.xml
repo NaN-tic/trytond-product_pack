@@ -3,8 +3,8 @@
 The COPYRIGHT file at the top level of this repository contains the full
 copyright notices and license terms. -->
 <tree string="Product Pack" sequence="sequence">
+    <field name="name"/>
     <field name="product"/>
-    <field name="packaging_type"/>
     <field name="qty"/>
     <field name="weight"/>
     <field name="height"/>

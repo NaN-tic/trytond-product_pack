@@ -5,32 +5,19 @@ from trytond.model import ModelView, ModelSQL, fields
 from trytond.pool import Pool, PoolMeta
 
 
-__all__ = ['PackagingType', 'ProductPack', 'ProductCode', 'Template']
+__all__ = ['ProductPack', 'ProductCode', 'Template']
 __metaclass__ = PoolMeta
-
-
-class PackagingType(ModelSQL, ModelView):
-    'Packaging Type'
-    __name__ = "product.packaging.type"
-    name = fields.Char('Name', select=True, required=True, translate=True)
-    type = fields.Selection([
-            ('unit', 'Unit'),
-            ('pack', 'Pack'),
-            ('box', 'Box'),
-            ('pallet', 'Pallet')
-            ], 'Type', required=True)
 
 
 class ProductPack(ModelSQL, ModelView):
     'Product Pack'
     __name__ = 'product.pack'
     _rec_name = 'packaging_type'
+    name = fields.Char('Name', select=True, required=True, translate=True)
     product = fields.Many2One('product.template', 'Product',
         ondelete='CASCADE')
     sequence = fields.Integer('Sequence',
         help='Gives the sequence order when displaying a list of packaging.')
-    packaging_type = fields.Many2One('product.packaging.type',
-        'Type of Packaging', required=True)
     qty = fields.Float('Quantity by Package',
         help='The total number of products you can put by packaging.')
     weight = fields.Float('Empty Packaging Weight')
@@ -46,9 +33,6 @@ class ProductPack(ModelSQL, ModelView):
         'weight.')
     codes = fields.One2Many('product.code', 'product_pack', 'Codes')
     note = fields.Text('Description')
-
-    def get_rec_name(self, name):
-        return self.packaging_type.name
 
     @classmethod
     def __setup__(cls):
