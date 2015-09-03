@@ -2,7 +2,8 @@
 # The COPYRIGHT file at the top level of this repository contains the full
 # copyright notices and license terms.
 from trytond.model import ModelView, ModelSQL, fields
-from trytond.pool import Pool, PoolMeta
+from trytond.pool import PoolMeta
+from trytond.pyson import Eval
 
 
 __all__ = ['ProductPack', 'Template']
@@ -13,13 +14,13 @@ class ProductPack(ModelSQL, ModelView):
     'Product Pack'
     __name__ = 'product.pack'
 
-
     name = fields.Char('Name', select=True, required=True, translate=True)
     product = fields.Many2One('product.template', 'Product',
         ondelete='CASCADE', required=True)
     sequence = fields.Integer('Sequence',
         help='Gives the sequence order when displaying a list of packaging.')
     qty = fields.Float('Quantity by Package',
+        digits=(16, Eval('uom_digits', 2)), depends=['uom_digits'],
         help='The total number of products you can put by packaging.')
     weight = fields.Float('Empty Packaging Weight')
     height = fields.Float('Height')
@@ -34,7 +35,9 @@ class ProductPack(ModelSQL, ModelView):
         'weight.')
     note = fields.Text('Description')
     uom = fields.Function(fields.Many2One('product.uom', 'Unit'),
-        'get_product_uom')
+        'on_change_with_uom')
+    uom_digits = fields.Function(fields.Integer('Unit Digits'),
+        'on_change_with_uom_digits')
 
     @classmethod
     def __setup__(cls):
@@ -50,10 +53,17 @@ class ProductPack(ModelSQL, ModelView):
     def default_sequence():
         return 1
 
-    def get_product_uom(self, name=None):
-        if not self.product:
-            return
-        return self.product.default_uom.id
+    @fields.depends('product')
+    def on_change_with_uom(self, name=None):
+        if self.product:
+            return self.product.default_uom.id
+        return
+
+    @fields.depends('uom')
+    def on_change_with_uom_digits(self, name=None):
+        if self.uom:
+            return self.uom.digits
+        return 2
 
     @fields.depends('weight', 'layers', 'packages_layer',
         'pallet_weight')

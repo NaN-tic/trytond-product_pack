@@ -2,14 +2,6 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
-msgctxt "field:product.code,product_pack:"
-msgid "Packaging"
-msgstr "Embalaje"
-
-msgctxt "field:product.pack,codes:"
-msgid "Codes"
-msgstr "Códigos"
-
 msgctxt "field:product.pack,create_date:"
 msgid "Create Date"
 msgstr "Fecha creación"
@@ -34,6 +26,11 @@ msgctxt "field:product.pack,length:"
 msgid "Length"
 msgstr "Longitud"
 
+#, fuzzy
+msgctxt "field:product.pack,name:"
+msgid "Name"
+msgstr "Nombre"
+
 msgctxt "field:product.pack,note:"
 msgid "Description"
 msgstr "Descripción"
@@ -41,10 +38,6 @@ msgstr "Descripción"
 msgctxt "field:product.pack,packages_layer:"
 msgid "Packagings by layer"
 msgstr "Embalajes por capa"
-
-msgctxt "field:product.pack,packaging_type:"
-msgid "Type of Packaging"
-msgstr "Tipo de embalaje"
 
 msgctxt "field:product.pack,pallet_weight:"
 msgid "Pallet Weight"
@@ -70,6 +63,7 @@ msgctxt "field:product.pack,total_packaging_weight:"
 msgid "Total Packaging Weight"
 msgstr "Peso total embalajes"
 
+#, fuzzy
 msgctxt "field:product.pack,weight:"
 msgid "Empty Packaging Weight"
 msgstr "Peso embalaje vacío"
@@ -86,46 +80,16 @@ msgctxt "field:product.pack,write_uid:"
 msgid "Write User"
 msgstr "Usuario modificación"
 
-msgctxt "field:product.packaging.type,create_date:"
-msgid "Create Date"
-msgstr "Fecha creación"
-
-msgctxt "field:product.packaging.type,create_uid:"
-msgid "Create User"
-msgstr "Usuario creación"
-
-msgctxt "field:product.packaging.type,id:"
-msgid "ID"
-msgstr "ID"
-
-msgctxt "field:product.packaging.type,name:"
-msgid "Name"
-msgstr "Nombre"
-
-msgctxt "field:product.packaging.type,rec_name:"
-msgid "Name"
-msgstr "Nombre"
-
-msgctxt "field:product.packaging.type,type:"
-msgid "Type"
-msgstr "Tipo"
-
-msgctxt "field:product.packaging.type,write_date:"
-msgid "Write Date"
-msgstr "Fecha modificación"
-
-msgctxt "field:product.packaging.type,write_uid:"
-msgid "Write User"
-msgstr "Usuario modificación"
-
 msgctxt "field:product.template,packagings:"
 msgid "Packagings"
 msgstr "Embalajes"
 
+#, fuzzy
 msgctxt "help:product.pack,layers:"
 msgid "The number of layers in a pallet."
 msgstr "El número de capas en un palet."
 
+#, fuzzy
 msgctxt "help:product.pack,qty:"
 msgid "The total number of products you can put by packaging."
 msgstr "El número total de productos que puede poner por embalaje."
@@ -151,26 +115,6 @@ msgstr "Embalaje de producto"
 msgctxt "model:product.pack,name:"
 msgid "Product Pack"
 msgstr "Embalaje de producto"
-
-msgctxt "model:product.packaging.type,name:"
-msgid "Packaging Type"
-msgstr "Tipo de embalaje"
-
-msgctxt "selection:product.packaging.type,type:"
-msgid "Box"
-msgstr "Caja"
-
-msgctxt "selection:product.packaging.type,type:"
-msgid "Pack"
-msgstr "Embalaje"
-
-msgctxt "selection:product.packaging.type,type:"
-msgid "Pallet"
-msgstr "Palet"
-
-msgctxt "selection:product.packaging.type,type:"
-msgid "Unit"
-msgstr "Unidad"
 
 msgctxt "view:product.pack:"
 msgid "Measures"
