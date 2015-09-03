@@ -26,7 +26,6 @@ msgctxt "field:product.pack,length:"
 msgid "Length"
 msgstr "Llargada"
 
-#, fuzzy
 msgctxt "field:product.pack,name:"
 msgid "Name"
 msgstr "Nom"
@@ -63,7 +62,14 @@ msgctxt "field:product.pack,total_packaging_weight:"
 msgid "Total Packaging Weight"
 msgstr "Pes total embalatges"
 
-#, fuzzy
+msgctxt "field:product.pack,uom:"
+msgid "Unit"
+msgstr "Unitat"
+
+msgctxt "field:product.pack,uom_digits:"
+msgid "Unit Digits"
+msgstr "Decimals unitat"
+
 msgctxt "field:product.pack,weight:"
 msgid "Empty Packaging Weight"
 msgstr "Pes embalatge buit"
@@ -84,12 +90,10 @@ msgctxt "field:product.template,packagings:"
 msgid "Packagings"
 msgstr "Embalatges"
 
-#, fuzzy
 msgctxt "help:product.pack,layers:"
 msgid "The number of layers in a pallet."
 msgstr "El número de capes en un palet."
 
-#, fuzzy
 msgctxt "help:product.pack,qty:"
 msgid "The total number of products you can put by packaging."
 msgstr "El número total de productes que podeu posar per embalatge."
