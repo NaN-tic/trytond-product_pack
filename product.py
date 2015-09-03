@@ -44,6 +44,12 @@ class ProductPack(ModelSQL, ModelView):
         super(ProductPack, cls).__setup__()
         cls._order = [('product', 'ASC'), ('sequence', 'ASC')]
 
+    def get_rec_name(self, name=None):
+        rec_name = self.name
+        if self.qty:
+            rec_name = '%s (%d %s)' % (rec_name, self.qty, self.uom.rec_name)
+        return rec_name
+
     @staticmethod
     def order_sequence(tables):
         table, _ = tables[None]
