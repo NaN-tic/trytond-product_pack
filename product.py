@@ -47,7 +47,7 @@ class ProductPack(ModelSQL, ModelView):
     def get_rec_name(self, name=None):
         rec_name = self.name
         if self.qty:
-            rec_name = '%s (%d %s)' % (rec_name, self.qty, self.uom.rec_name)
+            rec_name = '%s (%s %s)' % (rec_name, self.qty, self.uom.rec_name)
         return rec_name
 
     @staticmethod
