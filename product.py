@@ -43,6 +43,11 @@ class ProductPack(ModelSQL, ModelView):
     def __setup__(cls):
         super(ProductPack, cls).__setup__()
         cls._order = [('product', 'ASC'), ('sequence', 'ASC')]
+        cls._sql_constraints += [
+            ('check_product_pack_qty_pos',
+                'CHECK(qty IS NULL OR qty >= 0.0)',
+                'Quantity by Package of Package must be positive'),
+            ]
 
     def get_rec_name(self, name=None):
         rec_name = self.name
