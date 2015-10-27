@@ -2,6 +2,10 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
+msgctxt "error:product.pack:"
+msgid "Quantity by Package of Package must be positive"
+msgstr "La cantidad por embajale del embalaje debe ser positiva"
+
 msgctxt "field:product.pack,create_date:"
 msgid "Create Date"
 msgstr "Fecha creación"
