@@ -2,24 +2,14 @@
 # This file is part of the product_pack module for Tryton.
 # The COPYRIGHT file at the top level of this repository contains the full
 # copyright notices and license terms.
-from trytond.tests.test_tryton import test_view, test_depends
+from trytond.tests.test_tryton import ModuleTestCase
 import trytond.tests.test_tryton
 import unittest
 
 
-class ProductPackTestCase(unittest.TestCase):
+class ProductPackTestCase(ModuleTestCase):
     'Test Product Pack module'
-
-    def setUp(self):
-        trytond.tests.test_tryton.install_module('product_pack')
-
-    def test0005views(self):
-        'Test views'
-        test_view('product_pack')
-
-    def test0006depends(self):
-        'Test depends'
-        test_depends()
+    module = 'product_pack'
 
 
 def suite():
