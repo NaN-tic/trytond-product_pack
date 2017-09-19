@@ -1,0 +1,140 @@
+#
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "error:product.pack:"
+msgid "Quantity by Package of Package must be positive"
+msgstr "Anzahl pro Packstück muss eine positive Zahl sein."
+
+msgctxt "field:product.pack,create_date:"
+msgid "Create Date"
+msgstr "Erstellungsdatum"
+
+msgctxt "field:product.pack,create_uid:"
+msgid "Create User"
+msgstr "Erstellt durch"
+
+msgctxt "field:product.pack,height:"
+msgid "Height"
+msgstr "Höhe"
+
+msgctxt "field:product.pack,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:product.pack,layers:"
+msgid "Number of Layers"
+msgstr "Anzahl an Lagen"
+
+msgctxt "field:product.pack,length:"
+msgid "Length"
+msgstr "Länge"
+
+msgctxt "field:product.pack,name:"
+msgid "Name"
+msgstr "Name"
+
+msgctxt "field:product.pack,note:"
+msgid "Description"
+msgstr "Beschreibung"
+
+msgctxt "field:product.pack,packages_layer:"
+msgid "Packagings by layer"
+msgstr "Packstücke pro Lage"
+
+msgctxt "field:product.pack,pallet_weight:"
+msgid "Pallet Weight"
+msgstr "Palettengewicht"
+
+msgctxt "field:product.pack,product:"
+msgid "Product"
+msgstr "Variante"
+
+msgctxt "field:product.pack,qty:"
+msgid "Quantity by Package"
+msgstr "Anzahl pro Packstück"
+
+msgctxt "field:product.pack,rec_name:"
+msgid "Name"
+msgstr "Name"
+
+msgctxt "field:product.pack,sequence:"
+msgid "Sequence"
+msgstr "Reihenfolge"
+
+msgctxt "field:product.pack,total_packaging_weight:"
+msgid "Total Packaging Weight"
+msgstr "Gesamtgewicht"
+
+msgctxt "field:product.pack,uom:"
+msgid "Unit"
+msgstr "Stück"
+
+msgctxt "field:product.pack,uom_digits:"
+msgid "Unit Digits"
+msgstr "Nachkommastellen"
+
+msgctxt "field:product.pack,weight:"
+msgid "Empty Packaging Weight"
+msgstr "Leergewicht Verpackung"
+
+msgctxt "field:product.pack,width:"
+msgid "Width"
+msgstr "Breite"
+
+msgctxt "field:product.pack,write_date:"
+msgid "Write Date"
+msgstr "Zuletzt geändert"
+
+msgctxt "field:product.pack,write_uid:"
+msgid "Write User"
+msgstr "Letzte Änderung durch"
+
+msgctxt "field:product.template,packagings:"
+msgid "Packagings"
+msgstr "Verpackungen"
+
+msgctxt "help:product.pack,layers:"
+msgid "The number of layers in a pallet."
+msgstr "Die Anzahl von Lagen auf einer Palette."
+
+msgctxt "help:product.pack,qty:"
+msgid "The total number of products you can put by packaging."
+msgstr "Anzahl der Variante pro Packstück"
+
+msgctxt "help:product.pack,sequence:"
+msgid "Gives the sequence order when displaying a list of packaging."
+msgstr "Gibt die Reihenfolge auf der Verpackungsliste an."
+
+msgctxt "help:product.pack,total_packaging_weight:"
+msgid "The weight of packagings for a full pallet (included pallet weight."
+msgstr ""
+"Gewicht aller Packstücke für eine volle Palette (inklusive Palettengewicht)."
+
+msgctxt "model:ir.action,name:act_product_pack"
+msgid "Product Package"
+msgstr "Verpackungen"
+
+msgctxt "model:ir.ui.menu,name:menu_product_pack"
+msgid "Product Package"
+msgstr "Verpackungen"
+
+msgctxt "model:product.pack,name:"
+msgid "Product Pack"
+msgstr "Verpackung"
+
+msgctxt "view:product.pack:"
+msgid "Measures"
+msgstr "Abmessungen"
+
+msgctxt "view:product.pack:"
+msgid "Palletization"
+msgstr "Palettierung"
+
+msgctxt "view:product.pack:"
+msgid "Product Pack"
+msgstr "Verpackung"
+
+msgctxt "view:product.template:"
+msgid "Packaging"
+msgstr "Verpackung"
