@@ -3,7 +3,7 @@ msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "error:product.pack:"
-msgid "Quantity by Package of Package must be positive"
+msgid "Quantity by Package of Package must be positive."
 msgstr "Anzahl pro Packstück muss eine positive Zahl sein."
 
 msgctxt "field:product.pack,create_date:"

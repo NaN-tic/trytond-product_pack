@@ -1,13 +1,13 @@
 # This file is part of the product_pack module for Tryton.
 # The COPYRIGHT file at the top level of this repository contains the full
 # copyright notices and license terms.
-from trytond.model import ModelView, ModelSQL, fields
+from sql import Null
+from trytond.model import ModelView, ModelSQL, fields, Check
 from trytond.pool import PoolMeta
 from trytond.pyson import Eval
 
 
 __all__ = ['ProductPack', 'Template']
-__metaclass__ = PoolMeta
 
 
 class ProductPack(ModelSQL, ModelView):
@@ -43,10 +43,11 @@ class ProductPack(ModelSQL, ModelView):
     def __setup__(cls):
         super(ProductPack, cls).__setup__()
         cls._order = [('product', 'ASC'), ('sequence', 'ASC')]
+        t = cls.__table__()
         cls._sql_constraints += [
             ('check_product_pack_qty_pos',
-                'CHECK(qty IS NULL OR qty >= 0.0)',
-                'Quantity by Package of Package must be positive'),
+                Check(t, (t.qty == Null) | (t.qty >= '0')),
+                'Quantity by Package of Package must be positive.'),
             ]
 
     def get_rec_name(self, name=None):
@@ -87,5 +88,6 @@ class ProductPack(ModelSQL, ModelView):
 
 
 class Template:
+    __metaclass__ = PoolMeta
     __name__ = 'product.template'
     packagings = fields.One2Many('product.pack', 'product', 'Packagings')
