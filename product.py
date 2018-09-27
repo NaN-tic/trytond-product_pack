@@ -87,7 +87,6 @@ class ProductPack(ModelSQL, ModelView):
             + self.pallet_weight)
 
 
-class Template:
-    __metaclass__ = PoolMeta
+class Template(metaclass=PoolMeta):
     __name__ = 'product.template'
     packagings = fields.One2Many('product.pack', 'product', 'Packagings')
