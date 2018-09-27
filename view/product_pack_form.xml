@@ -2,7 +2,7 @@
 <!-- This file is part of product_pack module for Tryton.
 The COPYRIGHT file at the top level of this repository contains the full
 copyright notices and license terms. -->
-<form string="Product Pack">
+<form>
     <label name="name"/>
     <field name="name"/>
     <label name="product"/>
