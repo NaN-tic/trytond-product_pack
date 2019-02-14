@@ -9,7 +9,9 @@ import ConfigParser
 
 MODULE = 'product_pack'
 PREFIX = 'trytonzz'
-MODULE2PREFIX = {}
+MODULE2PREFIX = {
+    'product_barcode': 'trytonzz',
+}
 
 
 def read(fname):
