@@ -65,7 +65,7 @@ class ProductPack(ModelSQL, ModelView):
     def default_sequence():
         return 1
 
-    @fields.depends('product')
+    @fields.depends('product', '_parent_product.default_uom')
     def on_change_with_uom(self, name=None):
         if self.product:
             return self.product.default_uom.id
