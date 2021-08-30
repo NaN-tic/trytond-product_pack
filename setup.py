@@ -10,7 +10,6 @@ from configparser import ConfigParser
 MODULE = 'product_pack'
 PREFIX = 'trytonzz'
 MODULE2PREFIX = {
-    'product_barcode': 'trytonzz',
 }
 
 
