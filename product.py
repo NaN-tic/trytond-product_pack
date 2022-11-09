@@ -14,7 +14,7 @@ class ProductPack(ModelSQL, ModelView):
     'Product Pack'
     __name__ = 'product.pack'
 
-    name = fields.Char('Name', select=True, required=True, translate=True)
+    name = fields.Char('Name', required=True, translate=True)
     product = fields.Many2One('product.template', 'Product',
         ondelete='CASCADE', required=True)
     sequence = fields.Integer('Sequence',
