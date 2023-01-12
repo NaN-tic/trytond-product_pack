@@ -90,3 +90,7 @@ class ProductPack(ModelSQL, ModelView):
 class Template(metaclass=PoolMeta):
     __name__ = 'product.template'
     packagings = fields.One2Many('product.pack', 'product', 'Packagings')
+
+
+class Product(metaclass=PoolMeta):
+    __name__ = 'product.product'
