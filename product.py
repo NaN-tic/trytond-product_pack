@@ -67,9 +67,8 @@ class ProductPack(ModelSQL, ModelView):
 
     @fields.depends('product', '_parent_product.default_uom')
     def on_change_with_uom(self, name=None):
-        if self.product:
+        if self.product and self.product.default_uom:
             return self.product.default_uom.id
-        return
 
     @fields.depends('uom')
     def on_change_with_uom_digits(self, name=None):
