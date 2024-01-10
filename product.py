@@ -20,7 +20,7 @@ class ProductPack(ModelSQL, ModelView):
     sequence = fields.Integer('Sequence',
         help='Gives the sequence order when displaying a list of packaging.')
     qty = fields.Float('Quantity by Package',
-        digits=(16, Eval('uom_digits', 2)), depends=['uom_digits'],
+        digits=(16, Eval('uom_digits', 2)),
         help='The total number of products you can put by packaging.')
     weight = fields.Float('Empty Packaging Weight')
     height = fields.Float('Height')
