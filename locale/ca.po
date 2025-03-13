@@ -129,7 +129,7 @@ msgstr "Mesures"
 
 msgctxt "view:product.pack:"
 msgid "Palletization"
-msgstr "Patetització"
+msgstr "Paletització"
 
 msgctxt "view:product.pack:"
 msgid "Product Pack"
