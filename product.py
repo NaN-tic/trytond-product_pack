@@ -7,9 +7,6 @@ from trytond.pool import PoolMeta
 from trytond.pyson import Eval
 
 
-__all__ = ['ProductPack', 'Template']
-
-
 class ProductPack(ModelSQL, ModelView):
     'Product Pack'
     __name__ = 'product.pack'
@@ -42,7 +39,11 @@ class ProductPack(ModelSQL, ModelView):
     @classmethod
     def __setup__(cls):
         super(ProductPack, cls).__setup__()
-        cls._order = [('product', 'ASC'), ('sequence', 'ASC')]
+        cls._order = [
+            ('product', 'ASC'),
+            ('sequence', 'ASC'),
+            ('id', 'DESC'),
+            ]
         t = cls.__table__()
         cls._sql_constraints += [
             ('check_product_pack_qty_pos',
